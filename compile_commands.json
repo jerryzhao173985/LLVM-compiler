@@ -1,0 +1,12 @@
+[
+  {
+    "directory": "/Users/jerry/eva-llvm",
+    "command": "clang++ -std=c++17 -I/Users/jerry/toolchains/llvm-main/include -fno-exceptions -fno-rtti -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS main.cpp -o eva-llvm -L/Users/jerry/toolchains/llvm-main/lib -lLLVMCore -lLLVMSupport -lLLVMDemangle -lLLVMBinaryFormat -lLLVMRemarks -lLLVMBitstreamReader -lLLVMTargetParser -Wl,-undefined,dynamic_lookup",
+    "file": "main.cpp"
+  },
+  {
+    "directory": "/Users/jerry/eva-llvm",
+    "command": "clang++ -std=c++17 -I/Users/jerry/toolchains/llvm-main/include -fno-exceptions -fno-rtti -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -c src/EvaLLVM.h",
+    "file": "src/EvaLLVM.h"
+  }
+]

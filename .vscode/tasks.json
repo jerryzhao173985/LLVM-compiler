@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build LLVM Project",
+            "type": "shell",
+            "command": "clang++ -o eva-llvm main.cpp `llvm-config --cxxflags --ldflags --libs core support` -Wl,-rpath,`llvm-config --libdir` -Wl,-undefined,dynamic_lookup",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}

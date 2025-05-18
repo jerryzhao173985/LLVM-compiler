@@ -1,0 +1,29 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add: 
+    - -fno-exceptions
+    - -fno-rtti
+    - -std=c++17
+    - -D__STDC_CONSTANT_MACROS
+    - -D__STDC_FORMAT_MACROS
+    - -D__STDC_LIMIT_MACROS
+
+Diagnostics:
+  UnusedIncludes: Strict
+  ClangTidy:
+    Add: 
+      - llvm-*
+      - clang-analyzer-*
+    Remove: 
+      - clang-analyzer-cplusplus.NewDeleteLeaks
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+
+Hover:
+  ShowAKA: true
+
+Index:
+  Background: Build

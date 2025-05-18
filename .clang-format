@@ -1,0 +1,54 @@
+---
+# LLVM coding style with ARM64-specific adjustments
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++17
+
+# Basic layout
+ColumnLimit: 100
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+AccessModifierOffset: -2
+NamespaceIndentation: None
+
+# Alignment and wrapping
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignConsecutiveMacros: AcrossEmptyLines
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+
+# ARM64 pointer alignment
+PointerAlignment: Right
+
+# Control structures
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Attach
+
+# LLVM-specific
+AlwaysBreakAfterReturnType: None
+BreakBeforeInheritanceComma: false
+BreakConstructorInitializers: BeforeColon
+KeepEmptyLinesAtTheStartOfBlocks: false
+ReflowComments: true
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           '<[[:alnum:].]+>'
+    Priority:        4
+  - Regex:           '.*'
+    Priority:        1

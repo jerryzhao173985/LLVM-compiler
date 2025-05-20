@@ -1,8 +1,9 @@
 #include "./src/EvaLLVM.h"
 #include <iostream>
 #include <string>
+#include "doctest.h"
 
-int main(int argc, char *argv[]) {
+TEST_CASE("Test EvaLLVM") {
     // Sample program source code
     std::string program = R"(
         42
@@ -16,5 +17,18 @@ int main(int argc, char *argv[]) {
     eva.exec(program, false);  
 
     std::cout << "LLVM IR has been generated and saved to out.ll" << std::endl;
-    return 0;
+
+    // Check if the output file exists
+    std::ifstream infile("out.ll");
+    CHECK(infile.good());
+}
+
+int main(int argc, char *argv[]) {
+    doctest::Context context;
+    context.applyCommandLine(argc, argv);
+    int res = context.run();
+    if (context.shouldExit()) {
+        return res;
+    }
+    return res;
 }
